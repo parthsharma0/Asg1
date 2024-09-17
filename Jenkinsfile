@@ -4,9 +4,9 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 script {
-                    bat 'python -m venv venv'
-                    bat 'venv/bin/pip install -r requirements.txt'
-                }
+                          bat 'python -m venv venv'
+                          bat 'venv\\Scripts\\pip install -r requirements.txt'
+                       }
             }
         }
         stage('Run Tests') {
