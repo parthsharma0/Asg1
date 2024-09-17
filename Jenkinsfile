@@ -4,15 +4,15 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 script {
-                    sh 'python3 -m venv venv'
-                    sh 'venv/bin/pip install -r requirements.txt'
+                    bat 'python3 -m venv venv'
+                    bat 'venv/bin/pip install -r requirements.txt'
                 }
             }
         }
         stage('Run Tests') {
             steps {
                 script {
-                    sh 'venv/bin/pytest --junitxml=report.xml'
+                    bat 'venv/bin/pytest --junitxml=report.xml'
                 }
             }
         }
